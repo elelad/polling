@@ -1,0 +1,24 @@
+import { Component, Input, OnInit } from '@angular/core';
+import { CalEvent } from '../../model';
+import { EventsService } from '../../services/events.service';
+
+@Component({
+  selector: 'app-event-item',
+  templateUrl: './event-item.component.html',
+  styleUrls: ['./event-item.component.scss'],
+})
+export class EventItemComponent implements OnInit {
+
+  @Input() event: CalEvent;
+
+  constructor(private eventsService: EventsService) {
+  }
+
+  ngOnInit(): void {
+  }
+
+  remove(): void {
+    this.eventsService.removeEvent(this.event.id);
+  }
+
+}

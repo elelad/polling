@@ -1,0 +1,3 @@
+<div class="list">
+  <app-event-item *ngFor="let e of eventsService.events | async" [event]="e"></app-event-item>
+</div>
