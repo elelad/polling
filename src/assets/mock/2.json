@@ -1,42 +1,42 @@
 [
   {
     "id": 0,
-    "status": "processing"
+    "status": 0
   },
   {
     "id": 1,
-    "status": "processing"
+    "status": 0
   },
   {
     "id": 2,
-    "status": "done"
+    "status": 1
   },
   {
     "id": 3,
-    "status": "processing"
+    "status": 0
   },
   {
     "id": 4,
-    "status": "processing"
+    "status": 0
   },
   {
     "id": 5,
-    "status": "processing"
+    "status": 0
   },
   {
     "id": 6,
-    "status": "processing"
+    "status": 0
   },
   {
     "id": 7,
-    "status": "processing"
+    "status": 0
   },
   {
     "id": 8,
-    "status": "processing"
+    "status": 0
   },
   {
     "id": 9,
-    "status": "processing"
+    "status": 0
   }
 ]
