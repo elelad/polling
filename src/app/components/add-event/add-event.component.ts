@@ -15,7 +15,7 @@ export class AddEventComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pollingService.restartPolling$.pipe(shareReplay()).subscribe();
+    this.pollingService.pollingListener$.pipe(shareReplay()).subscribe();
   }
 
   addEvent(from: NgForm): void {

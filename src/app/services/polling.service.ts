@@ -12,7 +12,7 @@ export class PollingService {
   private readonly _idsForPolling: BehaviorSubject<(string | number)[]> = new BehaviorSubject<(string | number)[]>([]);
   public readonly idsForPolling$ = this._idsForPolling.asObservable();
 
-  public readonly restartPolling$ = this.idsForPolling$.pipe(
+  public readonly pollingListener$ = this.idsForPolling$.pipe(
     delay(1000),
     filter(() => this._idsForPolling.value.length > 0), // if no ids in polling array
     switchMap(() => this.pollingRequest()),

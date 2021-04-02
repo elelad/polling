@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pollingService.restartPolling$.subscribe(d => {
+    this.pollingService.pollingListener$.subscribe(d => {
       if (d.done.length !== 0) {
         this.isDone = true;
         setTimeout(() => {
