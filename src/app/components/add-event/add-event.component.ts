@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../../services/events.service';
 import { PollingService } from '../../services/polling.service';
 import { shareReplay } from 'rxjs/operators';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-event',
@@ -10,16 +11,16 @@ import { shareReplay } from 'rxjs/operators';
 })
 export class AddEventComponent implements OnInit {
 
-  constructor(private eventsService: EventsService, private pollingService: PollingService) {
+  constructor(public eventsService: EventsService, private pollingService: PollingService) {
   }
 
   ngOnInit(): void {
     this.pollingService.restartPolling$.pipe(shareReplay()).subscribe();
   }
 
-  addEvent(name: string): boolean {
-    this.eventsService.addEvent(name);
-    return false;
+  addEvent(from: NgForm): void {
+    this.eventsService.addEvent(from.value.name);
+    from.setValue({ name: '' });
   }
 
 }

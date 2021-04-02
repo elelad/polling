@@ -1,4 +1,8 @@
-<form (submit)="addEvent(addInput.value);">
-  <input #addInput type="text"/>
-  <button type="submit">Add</button>
+<form #addForm="ngForm" (ngSubmit)="addEvent(addForm)">
+  <input name="name" class="add-event-input" placeholder="Add event" ngModel required type="text"/>
+  <button mat-icon-button color="primary" type="submit"
+          [disabled]="addForm.form.invalid || (eventsService.events | async).length > 9">
+    <mat-icon>add_circle</mat-icon>
+  </button>
 </form>
+<p class="limit-msg" *ngIf="(eventsService.events | async).length > 9">Only 10 events for this demo</p>

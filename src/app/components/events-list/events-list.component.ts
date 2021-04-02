@@ -17,8 +17,8 @@ export class EventsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.pollingService.restartPolling$.subscribe(events => {
-      if (events.length) {
-        for (const e of events) {
+      if (events.done.length) {
+        for (const e of events.done) {
           this.eventsService.updateEvent(e);
         }
       }

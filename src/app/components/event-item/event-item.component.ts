@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CalEvent } from '../../model';
+import { CalEvent, EventStatus } from '../../model';
 import { EventsService } from '../../services/events.service';
 
 @Component({
@@ -10,6 +10,8 @@ import { EventsService } from '../../services/events.service';
 export class EventItemComponent implements OnInit {
 
   @Input() event: CalEvent;
+
+  eventStatus = EventStatus;
 
   constructor(private eventsService: EventsService) {
   }

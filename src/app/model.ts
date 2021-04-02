@@ -2,7 +2,7 @@
 export interface CalEvent{
   name: string;
   id: number;
-  status: 'processing' | 'done';
+  status: EventStatus;
 }
 
 
@@ -13,8 +13,16 @@ export interface PollingResponse{
 export function* getId(): Generator<number> {
   let index = 0;
   while (index < 10) {
-    yield index++;
+    index++;
+    if (index > 9) {
+      index = 0;
+    }
+    yield index;
   }
 }
 
 export const idGen = getId();
+
+export enum EventStatus{
+  processing, done
+}

@@ -5,10 +5,16 @@
   margin: 4px 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: white;
   max-width: 100%;
 }
 
 .name{
   flex-grow: 1;
+}
+
+.progress{
+  height: 20px !important;
+  width: 20px !important;
 }

@@ -1,0 +1,19 @@
+.mat-icon-button.mat-button-disabled.mat-button-disabled{
+  color: lightgray;
+}
+
+.add-event-input{
+  border: #7b1fa2 2px solid;
+  padding: 4px 8px;
+  border-radius: 8px;
+  outline: none;
+
+  &:focus{
+   border: #7b1fa2 3px solid;
+  }
+}
+
+.limit-msg{
+  margin: 4px;
+  color: red;
+}

@@ -1,4 +1,6 @@
-<header class="header">
+<mat-toolbar color="primary">
   <h1>Polling Example</h1>
-  <span *ngIf="isDone">Polling On</span>
-</header>
+  <span class="example-spacer"></span>
+  <span *ngIf="isDone" class="message">Event Done</span>
+  <mat-spinner class="spinner" color="accent" [diameter]="20" *ngIf="(pollingService.idsForPolling$ | async).length"></mat-spinner>
+</mat-toolbar>

@@ -8,18 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   isDone = false;
+  isProcessing = false;
 
-  constructor(private pollingService: PollingService) {
+  constructor(public pollingService: PollingService) {
   }
 
   ngOnInit(): void {
     this.pollingService.restartPolling$.subscribe(d => {
-      if (d.length > 0) {
+      if (d.done.length !== 0) {
         this.isDone = true;
         setTimeout(() => {
           this.isDone = false;
         }, 2000);
       }
+      this.isProcessing = !!d.inProgress.length;
     });
   }
 

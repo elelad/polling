@@ -1,14 +1,17 @@
-.header{
-  background-color: darkblue;
-  color: white;
-  height: 80px;
-  max-width: 100%;
-  padding-inline: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
-  h1{
-    margin: 0;
-  }
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.message{
+  padding: 4px 20px;
+  border-radius: 40px;
+  background-color: #69f0ae;
+  color: #7b1fa2;
+  font-size: 14px;
+}
+
+.spinner{
+  margin: 0 8px;
 }
