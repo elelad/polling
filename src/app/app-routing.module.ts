@@ -6,7 +6,7 @@ import { AboutComponent } from './components/about/about.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'events',
+    redirectTo: '/events',
     pathMatch: 'full'
   },
   {
@@ -18,7 +18,7 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
-    path: '*',
+    path: '**',
     redirectTo: 'events'
   }
 ];
