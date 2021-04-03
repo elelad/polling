@@ -7,7 +7,13 @@ export interface CalEvent{
 
 
 export interface PollingResponse{
-  events: CalEvent[];
+  id: number | string;
+  status: EventStatus;
+}
+
+export interface PollingListenerModel{
+  done: PollingResponse[];
+  inProgress: (string | number)[];
 }
 
 export function* getId(): Generator<number> {

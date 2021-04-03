@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { CalEvent, EventStatus, idGen } from '../model';
+import { CalEvent, EventStatus, idGen, PollingResponse } from '../model';
 import { PollingService } from './polling.service';
 
 @Injectable({
@@ -28,7 +28,7 @@ export class EventsService {
     this.pollingService.removeIdFromPolling(id);
   }
 
-  updateEvent(event: CalEvent): void {
+  updateEvent(event: CalEvent | PollingResponse): void {
     const currentEvents = [...this._events.value];
     currentEvents.map(e => {
       if (event.id === e.id) {

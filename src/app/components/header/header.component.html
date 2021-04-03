@@ -3,4 +3,7 @@
   <span class="example-spacer"></span>
   <span *ngIf="isDone" class="message">Event Done</span>
   <mat-spinner class="spinner" color="accent" [diameter]="20" *ngIf="(pollingService.idsForPolling$ | async).length"></mat-spinner>
+  <button mat-icon-button routerLink="/about">
+    <mat-icon color="accent">info</mat-icon>
+  </button>
 </mat-toolbar>
